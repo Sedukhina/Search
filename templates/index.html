@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="{{ url_for('static', filename='forms.js') }}"></script>
+    <title>Search</title>
+</head>
+<body>
+    <!--Settings form-->
+    <div class="form" id = "Settings">
+        <button type="button" class="closeButton" onclick="closeForm('Settings')">x</button>
+    </div>
+    <!--Main page-->
+    <div class="background-image-container">
+        <div class="main-panel">
+            <form action="{{ url_for('search') }}" method="post">
+                <input type="text" name="search_bar" class="search-bar" placeholder="Search..." required>
+                <button class="image-button">
+                    <img src={{ url_for('static', filename='images/Magnifier.svg') }} alt="Search">
+                </button>
+            </form>
+            <button class="image-button" onclick="openForm('Settings')">
+                <img src={{ url_for('static', filename='images/Settings.svg') }} alt="Settings">
+            </button>
+        </div>
+        {% block search_result %}{% endblock %}
+    </div>
+</body>
+</html>

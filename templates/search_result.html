@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block search_result %}
+<body>
+    <h2> Search result for {{query}}:  </h2>
+        {% for file in search_results%}
+            <h5>{{file}}</h5>
+        {% endfor %}
+</body>
+{% endblock %}

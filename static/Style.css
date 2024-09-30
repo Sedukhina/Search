@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background-image-container {
+    background-repeat: repeat-y;
+    min-height: 100vh;
+    background-size: 100% auto;
+}
+
+@media (max-aspect-ratio: 2/3) {
+    .background-image-container {
+        background-image: url("/static/images/Help.jpg");
+    }
+}
+
+@media (min-aspect-ratio: 2/3){
+    .background-image-container {
+        background-image: url("/static/images/Overworked.jpg");
+    }
+}
+
+.main-panel {
+    display: flex;
+    width: 100%;
+}
+
+.search-bar {
+    margin: 10px;
+    background-color: #000;
+    color: #fff; 
+    border: 2px solid #444; /* Dark gray border for subtle contrast */
+    border-radius: 6px; /* Slightly rounded corners */
+    padding: 10px; /* Padding inside the input */
+    font-family: 'Gothic A1', sans-serif; /* Gothic-like font */
+    font-size: 16px; /* Adjust font size as needed */
+    text-align: center;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus */
+}
+
+search-bar:focus {
+    border-color: #fff;
+    outline: none; 
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+}
+
+.image-button {
+    margin: 10px;
+    background: none;
+    border: none;
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    white-space: pre-line;
+    width: min(60%, 1200px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.closeButton {
+    justify-content: right;
+    background-color: #11ffee00;
+    border-color: azure;
+}

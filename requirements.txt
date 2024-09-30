@@ -1,0 +1,6 @@
+xxhash
+python-docx
+simplemma
+contractions
+flask
+easyocr
